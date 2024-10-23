@@ -1,10 +1,12 @@
+"use client";
+
 import { useState } from "react";
+import sendMail from "@/utils/send-mail";
 import { useForm } from "react-hook-form";
 import { ContactFormData } from "@/types/contact";
 import { Input, Textarea } from "@nextui-org/react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { NeuButton } from "@/components/ui/neu-button";
-import { handleContactFormSubmit } from "@/actions/contact";
 import { contactFormZodSchema } from "@/zod-schemas/contact";
 
 export function ContactForm() {
@@ -13,7 +15,6 @@ export function ContactForm() {
     register,
     handleSubmit,
     formState: { errors },
-
     reset,
   } = useForm<ContactFormData>({
     resolver: zodResolver(contactFormZodSchema),
@@ -23,9 +24,10 @@ export function ContactForm() {
     try {
       setLoading(true);
 
-      const res = await handleContactFormSubmit(data);
+      await sendMail(data);
 
-      if (res.success) reset();
+      alert("Email sent!");
+      reset();
     } catch (error) {
       alert("Something went wrong!");
     } finally {

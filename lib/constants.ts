@@ -8,4 +8,7 @@ export const myLinkedIn = "https://www.linkedin.com/in/-mehedihasan";
 
 export const myTwitter = "https://x.com/__mehedihasan";
 
-export const myInstagram = "https://instagram.com/m_h_4_u";
+export const myInstagram = "https://instagram.com";
+
+export const myFullStackResumePDF =
+  "https://drive.google.com/file/d/180RBCRjkygUKvn9NxZRLmAh_VztBMfDx/view?usp=sharing";

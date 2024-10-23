@@ -1,12 +1,9 @@
 import { NeuButton } from "../ui/neu-button";
+import { myFullStackResumePDF } from "@/lib/constants";
 
 export function Resume() {
   return (
-    <a
-      href="https://docs.google.com/document/d/17qPaHMiQ_PCcka9FI9UHdp4-TA_SXSpwIXwcy0mbkUQ/edit?usp=sharing"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
+    <a href={myFullStackResumePDF} target="_blank" rel="noopener noreferrer">
       <NeuButton text="Resume"></NeuButton>
     </a>
   );
